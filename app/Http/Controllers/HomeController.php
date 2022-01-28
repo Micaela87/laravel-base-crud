@@ -11,4 +11,8 @@ class HomeController extends Controller
     public function renderHome() {
         return view('home', ['comics' => Comic::all()]);
     }
+
+    public function renderSingle($id) {
+        return view('single', ['comic' => Comic::findOrFail($id)]);
+    }
 }
